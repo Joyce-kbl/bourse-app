@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Level;
 use App\Models\Faculty;
 use App\Models\Financer;
 use Illuminate\Database\Eloquent\Model;
@@ -20,5 +21,9 @@ class Scholarship extends Model
     {
         return $this->belongsTo(Financer::class);
     }
+
+    protected $casts = [
+        'level' => Level::class,
+    ];
 
 }
