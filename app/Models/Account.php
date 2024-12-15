@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Enums\Level;
+use App\Enums\Role;
 use App\Models\User;
 use App\Models\Faculty;
 use Illuminate\Database\Eloquent\Model;
@@ -20,4 +22,10 @@ class Account extends Model
     {
         return $this->belongsTo(Faculty::class);
     }
+
+    
+    protected $casts = [
+        'level' => Level::class,
+        'type_user' => Role::class,
+    ];
 }
