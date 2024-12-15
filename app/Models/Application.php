@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Status;
 use App\Models\User;
 use App\Models\Scholarship;
 use Illuminate\Database\Eloquent\Model;
@@ -21,4 +22,7 @@ class Application extends Model
         return $this->belongsTo(Scholarship::class);
     }
 
+    protected $casts = [
+        'status' => Status::class,
+    ];
 }
