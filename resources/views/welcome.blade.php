@@ -66,12 +66,7 @@
         d’un avenir brillant.
       </p>
       <p>Votre avenir commence ici avec nos bourses</p>
-
-      @auth
-        <a href="{{ route('dashboard') }}" class="cta">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
-      @else
-        <a href="{{ route('login') }}" class="cta">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
-      @endauth
+      <a href="{{ route('login') }}" class="cta">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
     </div>
     <div class="img">
       <img src="{{ asset('imgs/hero-img.png') }}" alt="hero-img" />
@@ -162,11 +157,7 @@
           <h4>Étudiante en Médecine</h4>
         </div>
       </div>
-      @auth
-        <a href="{{ route('dashboard') }}" class="apply">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
-      @else
-        <a href="{{ route('login') }}" class="apply">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
-      @endauth
+      <a href="{{ route('login') }}" class="apply">Postulez dès maintenant <i class="fas fa-paper-plane"></i></a>
     </section>
     <section id="contact" class="contact">
       <h3 class="title">Contactez-nous</h3>
@@ -208,7 +199,8 @@
   </button>
   <footer>
     <div class="left">
-      <a href="{{ route('welcome') }}" class="logo"><img src="imgs/logo.png" alt="" /><span>UCCScholarships</span></a>
+      <a href="{{ route('welcome') }}" class="logo"><img src="imgs/logo.png"
+          alt="" /><span>UCCScholarships</span></a>
       <div class="copyright">
         Copyright Ucc scholarships ©2024. Tous les droits résérvés.
       </div>
