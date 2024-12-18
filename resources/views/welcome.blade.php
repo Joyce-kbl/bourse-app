@@ -14,6 +14,7 @@
   <!-- Styles / Scripts -->
   <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
   <script src="{{ asset('js/script.js') }}" defer></script>
+  @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
 
