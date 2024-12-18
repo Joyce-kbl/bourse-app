@@ -21,4 +21,9 @@ class Faculty extends Model
         return $this->hasMany(Scholarship::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'sigle';
+    }
+
 }
