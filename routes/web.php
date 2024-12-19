@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FinancerController;
 
 Route::get('/', function () {
   if (Auth::user()) {
@@ -43,6 +44,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware('auth')->group(function () {
   Route::resource('faculties', FacultyController::class);
+  Route::resource('financers', FinancerController::class);
 
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
