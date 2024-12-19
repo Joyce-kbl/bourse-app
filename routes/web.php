@@ -1,12 +1,13 @@
 <?php
 
 use App\Enums\Role;
-use App\Http\Controllers\ProfileController;
-use App\Models\Account;
 use App\Models\User;
+use App\Models\Account;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
   if (Auth::user()) {
@@ -41,6 +42,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 Route::middleware('auth')->group(function () {
+  Route::resource('faculties', FacultyController::class);
+
   Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
   Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
