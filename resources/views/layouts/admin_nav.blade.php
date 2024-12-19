@@ -20,9 +20,6 @@
           <x-nav-link :href="route('faculties.index')" :active="request()->routeIs('faculties.*')">
             {{ __('Facultés') }}
           </x-nav-link>
-          <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-            {{ __('Niveaux') }}
-          </x-nav-link>
           <x-dropdown>
             <x-slot name="trigger">
               <button
@@ -79,7 +76,6 @@
             <!-- Authentication -->
             <form method="POST" action="{{ route('logout') }}">
               @csrf
-
               <x-dropdown-link :href="route('logout')"
                 onclick="event.preventDefault();
                 this.closest('form').submit();">
