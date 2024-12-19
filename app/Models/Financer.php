@@ -15,4 +15,8 @@ class Financer extends Model
         return $this->hasMany(Scholarship::class);
     }
 
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }
